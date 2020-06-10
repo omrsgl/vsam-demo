@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "ol.vsam",
+      "type": "com.vsam_api.openlegacy.config.VsamFileProperties",
+      "sourceType": "com.vsam_api.openlegacy.config.VsamFileProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "ol.vsam.file-types-defaults",
+      "type": "java.util.Map<com.vsam_api.openlegacy.constants.VsamFileType,com.vsam_api.openlegacy.config.VsamFileProperties$VsamFileTypeDefaults>",
+      "sourceType": "com.vsam_api.openlegacy.config.VsamFileProperties"
+    },
+    {
+      "name": "ol.vsam.files",
+      "type": "java.util.List<com.vsam_api.openlegacy.config.VsamFileProperties$VsamFile>",
+      "sourceType": "com.vsam_api.openlegacy.config.VsamFileProperties"
+    }
+  ],
+  "hints": []
+}

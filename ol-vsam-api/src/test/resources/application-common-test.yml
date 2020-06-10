@@ -1,0 +1,53 @@
+#logging:
+#  level:
+#    org:
+#      openlegacy: debug
+
+ol:
+  vsam:
+    files:
+      - name: AAVSAMML
+        type: KSDS
+      - name: AAVS40ML
+        type: KSDS
+      - name: AAVS50ML
+        type: KSDS
+      - name: AAVS51ML
+        type: KSDS
+      - name: AAESDSML
+        type: ESDS
+      - name: F5750L84
+        type: ESDS
+        key-length: 8
+      - name: F5750LG2
+        type: KSDS
+      - name: APESDSML
+        type: ESDS
+      - name: F6875BNK
+        type: KSDS
+      - name: F6875LTC
+        type: KSDS
+      - name: F6875RON
+        type: KSDS
+      - name: F6875UDS
+        type: KSDS
+        part-names: []
+    file-types-defaults:
+      ksds:
+        key-offset: 17
+        key-length: 32
+        record-max-length: 14000
+      esds:
+        key-offset: 0
+        key-length: 4
+        record-max-length: 14000
+    project:
+      vsamSdk:
+        base-packages:
+          - "org.openlegacy.providers.vsam.entity"
+          - "com.vsam_api.openlegacy.entity"
+        base-url: http://192.86.32.238
+        port: 12345
+        uri-map: hapoalim
+        code-page: cp037
+        continue-on-error: true

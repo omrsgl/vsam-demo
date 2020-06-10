@@ -1,0 +1,50 @@
+---
+server:
+  port: 8080
+management:
+  health:
+    defaults:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "health"
+        - "olprojectinfo"
+        - "metrics"
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: "/swagger/swagger.json"
+ol:
+  vsam:
+    files:
+    - name: "AAVSAMML"
+    - name: "AAVS40ML"
+    - name: "AAVS50ML"
+    - name: "AAVS51ML"
+    file-types-defaults:
+      ksds:
+        key-offset: 17
+        key-length: 32
+        record-max-length: 14000
+      esds:
+        key-offset: 0
+        key-length: 4
+        record-max-length: 14000
+    project:
+      vsamSdk:
+        base-packages:
+        - "org.openlegacy.providers.vsam.entity"
+        - "com.vsam_api.openlegacy.entity"
+        base-url: "http://192.86.32.238"
+        port: 12345
+        uri-map: "hapoalim"
+        code-page: "cp037"
+        continue-on-error: true
+  timeout:
+    backend:
+      mf-rpc: 30000
+  license:
+    key: "eyJhbGciOiJSUzI1NiJ9.eyJwcm9kdWN0Ijoib3BlbmxlZ2FjeS1jb3JlIiwic3ViIjoib2wiLCJpc3N1ZWRfYXQiOiIyMDIwLTA1LTA4VDE3OjAwOjAwLjAxWiIsInZhbGlkX2ZvciI6LTF9.Pq99vhVSbJLhRiVt1F8umzJUQRf4LZe3yiNAOUj78fONZw2ppx5CnhSqU_GbUch74yVi_bAGWx4yZ6Y8Zusykt3gv36OAUledCZ5D1U2YeVUOIi5tpU4ejpnuRZpd-d5OzZKOaQfunspqP-aUPmXU3meLjAEbi2C1TDH5YWhdHu6mui0EZ9wSU1AQRELdHwmHQtba3s_I2I7S-85noSdc6oyV4TKk4I3_92oWvicX92QGFaWXlQK9MN6OYqgD3Qzy-r64oiIkF-Px-jOeuQedmcpcb_7_4YDGpXnRuYC3uhIal3PkOO1Md5xHok5f0Ro8NOCMYFnMW0ZKWxU-EA4WQ"

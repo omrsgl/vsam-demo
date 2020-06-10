@@ -1,0 +1,26 @@
+---
+ol:
+  config:
+    apiSourceFolder: "src/main/java"
+    apiPackage: "com.vsam_api.openlegacy"
+    webPackage: "com.vsam_api.openlegacy.web"
+    sourceFetcher: "sourceFetcher"
+    designtimeContext: "default"
+    backendSolution: "ORCHESTRATION"
+    frontendSolution: "ORCHESTRATION_REST"
+    referredProjects: []
+    generateImpl: false
+    rpc:
+      generateRpcPartAsExternalClass: true
+    additionalProperties: {}
+    designtime:
+      parser:
+        cobol:
+          addMissedDots: false
+          handleDuplicateNames: false
+        wsdl:
+          removeNamespaceTrailingSlash: false
+      mapping:
+        converters: []
+    swagger:
+      updateDocketInfoFromContractFile: true

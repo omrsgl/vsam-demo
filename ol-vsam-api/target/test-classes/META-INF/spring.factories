@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.vsam_api.openlegacy.config.VsamApiConfiguration
