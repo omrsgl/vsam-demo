@@ -35,8 +35,11 @@ The following demonstrate how to create a new OL VSAM project and expose VSAM da
     ```
     After running these commands, you will see new entities in the project package `com.vsam_api.openlegacy.entity`
     > **NOTE**
+    >
     > `-record -list` displays the current records in the project
+    >
     > `-id` parameter is a custom implementation, when there are multiple VSAM records in a single VSAM File
+    >
     > `-redefines string` parameter means that all REDEFINES occurences in the Copybooks will be generated as String.
     
 7.	*Add VSAM file definition* - Add VSAM file definition with the following commands:
@@ -50,6 +53,7 @@ The following demonstrate how to create a new OL VSAM project and expose VSAM da
     ```
     After running these commands, you will see new VSAM file definitions in the project, in `applicaiton.yml`, in property `ol.vsam.files`
     > **NOTE**
+    >
     > `-file -list` displays the current files in the project
 
 8.  *Run and test the API*
@@ -58,16 +62,21 @@ The following demonstrate how to create a new OL VSAM project and expose VSAM da
     
     **Test1 - Get Records:**
     In `GET: /objects/{object-name}/records` ->
+    
     `Count` = 10
+    
     `object-name` = AAVS51ML
     
     After executing, you should receive records data back
     
     **Test2 - Search Records:**
     In `POST: /objects/{object-name}/sar` ->
+    
     `Count` = 10
+    
     `object-name` = AAVS51ML
-    Json body =
+    
+    Json body
     ```
     [
       {
