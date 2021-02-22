@@ -410,6 +410,8 @@ LBB   *          06  FILLER                         PIC X(01).
                  06  HIST-DSUB-EFF-DT               PIC S9(5)    COMP-3.        
                  06  HIST-DSUB-CANC-DT              PIC S9(5)    COMP-3.        
                  06  HIST-DSUB-OVERPAY-IND          PIC X(1).                   
+OPDEC0           06  HIST-DSUB-OVERPAY-STATUS REDEFINES                         
+OPDEC0                             HIST-DSUB-OVERPAY-IND  PIC X(1).             
                  06  HIST-DSUB-J-EOB-INFO-ALL.                                  
                      10  HIST-DSUB-J-EOB-DED-MAX-DATA.                          
                        15  HIST-DSUB-J-DED-TABLE-ENTRIES                        
@@ -474,12 +476,24 @@ LBB   *          06  FILLER                         PIC X(01).
 022098                 15 HIST-DSUB-J-EOB-SCHED-R-IND                           
 022098                                              PIC X.                      
 022098                 15 HIST-DSUB-J-FIRST-AMT-CLM PIC S9(3)V99 COMP-3.        
+MC1219                 15 HIST-DSUB-J-FIRST-AMT-CLM-RED                         
+MC1219                    REDEFINES HIST-DSUB-J-FIRST-AMT-CLM                   
+MC1219                                              PIC S9(5)    COMP-3.        
 022098                 15 HIST-DSUB-J-SECOND-AMT-CLM                            
 022098                                              PIC S9(3)V99 COMP-3.        
+MC1219                 15 HIST-DSUB-J-SECOND-AMT-CLM-RED                        
+MC1219                    REDEFINES HIST-DSUB-J-SECOND-AMT-CLM                  
+MC1219                                              PIC S9(5)    COMP-3.        
 022098                 15 HIST-DSUB-J-THIRD-AMT-CLM PIC S9(5)    COMP-3.        
 022098                 15 HIST-DSUB-J-FIRST-AMT-PER PIC S9(3)V99 COMP-3.        
+MC1219                 15 HIST-DSUB-J-FIRST-AMT-PER-RED                         
+MC1219                    REDEFINES HIST-DSUB-J-FIRST-AMT-PER                   
+MC1219                                              PIC S9(5)    COMP-3.        
 022098                 15 HIST-DSUB-J-SECOND-AMT-PER                            
                                                     PIC S9(3)V99 COMP-3.        
+MC1219                 15 HIST-DSUB-J-SECOND-AMT-PER-RED                        
+MC1219                    REDEFINES HIST-DSUB-J-SECOND-AMT-PER                  
+MC1219                                              PIC S9(5)    COMP-3.        
 022098                 15 HIST-DSUB-J-THIRD-AMT-PER PIC S9(5)    COMP-3.        
                                                                                 
                  06  HIST-DSUB-J-EOB-ORTH-INFO-ALL REDEFINES                    
@@ -751,7 +765,10 @@ COBTR0*NE0500      07  HIST-DSUB-FILLER             PIC X(3245).
                          20  HIST-DSUB-CHG-COMMENT  PIC X(2).                   
                          20  HIST-DSUB-CO-INS-PCT   PIC S9V99    COMP-3.        
                          20  HIST-DSUB-HOW-CALC     PIC X.                      
-                         20  HIST-DSUB-UNITS-ALFNUM PIC X(2).                   
+                         20  HIST-DSUB-UNITS        PIC S9(3)    COMP-3.        
+                         20  HIST-DSUB-UNITS-ALFNUM                             
+                             REDEFINES HIST-DSUB-UNITS                          
+                                                    PIC X(2).                   
                          20  HIST-DSUB-SURFACE      PIC X.                      
                          20  HIST-DSUB-TOOTH        PIC X(2).                   
                          20  HIST-DSUB-PROS-DATE    PIC S9(5)    COMP-3.        
